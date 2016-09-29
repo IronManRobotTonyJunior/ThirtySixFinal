@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#FFF">
+
+    <ImageView
+        android:id="@+id/mine_include_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="18dp"
+        android:src="@mipmap/mine_icon_order1"/>
+
+    <TextView
+        android:id="@+id/mine_include_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/mine_include_iv"
+        android:text="我的订单"
+        android:textSize="15dp"/>
+
+
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/mine_include_in"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/common_arrow"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/mine_include_number"
+        android:layout_toStartOf="@id/mine_include_in"
+        />
+
+</RelativeLayout>

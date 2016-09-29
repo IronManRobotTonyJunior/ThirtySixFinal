@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#fff"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/search_ib"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:background="@drawable/shape_bank_edittext"
+            android:src="@mipmap/seaarch_nav_icon_search"
+            />
+
+        <EditText
+            android:id="@+id/search_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="10"
+            android:background="@drawable/shape_bank_edittext"
+            android:hint="搜索新闻/用户/公司"
+            android:imeOptions="actionSearch"
+            android:textColorHint="#9CA3AC"
+            />
+
+        <ImageView
+            android:id="@+id/search_delete"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@mipmap/login_icon_delete"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/search_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="2"
+            android:background="#00000000"
+            android:text="取消"
+            android:textColor="#4285F4"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#EFEFEF"/>
+
+    <RelativeLayout
+        android:id="@+id/search_rl"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="160dp"
+            android:id="@+id/center_iv"
+            android:layout_height="160dp"
+            android:src="@mipmap/search_ph_search"
+            android:layout_marginTop="98dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_below="@id/center_iv"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无搜索记录"
+            android:textColor="#97A0AA"
+            />
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_margin="15dp"
+        android:id="@+id/search_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+    </ListView>
+</LinearLayout>
+

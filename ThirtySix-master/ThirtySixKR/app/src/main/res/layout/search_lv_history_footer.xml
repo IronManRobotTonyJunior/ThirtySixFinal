@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_margin="10dp"
+                android:padding="10dp">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="清除历史记录"
+    android:textSize="16dp"
+    android:id="@+id/search_footer_tv"
+    android:textColor="#4285F4"
+    android:gravity="center"/>
+</LinearLayout>

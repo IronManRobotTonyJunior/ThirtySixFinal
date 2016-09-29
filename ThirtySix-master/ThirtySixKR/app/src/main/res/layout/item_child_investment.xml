@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingBottom="35dp"
+              android:paddingTop="15dp"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.dllo.thirtysixkr.tools.customview.MyCircleImage
+            android:id="@+id/item_investment_user_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            app:is_circle="true"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/item_investment_user_icon">
+
+            <TextView
+                android:id="@+id/item_investment_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/item_investment_brief"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="2"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/item_investment_focus"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textColor="#629af6"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_focus"
+            android:text="关注"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/item_investment_img"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_lead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="领投方"/>
+
+        <TextView
+            android:id="@+id/tv_founder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_lead"
+            android:padding="5dp"
+            android:text="创始人"/>
+
+        <TextView
+            android:id="@+id/tv_hatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_founder"
+            android:padding="5dp"
+            android:text="孵化器"/>
+
+        <TextView
+            android:id="@+id/tv_input_lead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:text="领投方"/>
+
+        <TextView
+            android:id="@+id/tv_input_founder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/tv_lead"
+            android:padding="5dp"
+            android:text="创始人"/>
+
+        <TextView
+            android:id="@+id/tv_input_hatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/tv_founder"
+            android:padding="5dp"
+            android:text="孵化器"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="#aaa"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_input_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="15dp"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="230dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="10dp"
+            android:layout_below="@id/tv_input_desc"
+            android:layout_marginLeft="20dp"
+            android:progressDrawable="@drawable/layer_list"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_input_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_alignEnd="@id/progress_bar"
+            android:textColor="#999"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tv_input_rate"
+            android:textColor="#999"
+            android:layout_marginTop="15dp"
+            android:text="已募资"/>
+
+        <Button
+            android:id="@+id/item_investment_buy"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#fff"
+            android:background="@drawable/shape_bought"
+            android:text="认购"
+            />
+
+    </RelativeLayout>
+</LinearLayout>

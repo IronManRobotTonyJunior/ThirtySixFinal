@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/web_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFF"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <Button
+                android:id="@+id/more_award"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_more_award"
+                android:text="¥打赏"
+                android:textColor="#4285F4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="20dp"
+                android:text="支持作者"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="#F9F9F9"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:text="屏幕亮度"/>
+
+            <SeekBar
+                android:id="@+id/more_light"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="#F9F9F9"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="15dp"
+                android:layout_weight="3"
+                android:text="字体大小"/>
+
+            <RadioGroup
+                android:layout_width="0dp"
+                android:id="@+id/more_radio_group"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:id="@+id/more_text_size_tiny"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="小"
+                    android:background="#00000000"
+                    android:padding="10dp"
+                    android:textColor="@drawable/more_text_color_radiobutton"
+                    android:button="@null"/>
+
+                <RadioButton
+                    android:id="@+id/more_text_size_middle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@drawable/more_text_color_radiobutton"
+                    android:text="中"
+                    android:background="#00000000"
+                    android:padding="10dp"
+                    android:textSize="15dp"
+                    android:button="@null"/>
+
+                <RadioButton
+                    android:id="@+id/more_text_size_big"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="大"
+                    android:padding="10dp"
+                    android:background="#00000000"
+                    android:textColor="@drawable/more_text_color_radiobutton"
+                    android:button="@null"
+                    android:textSize="15dp"/>
+
+                <RadioButton
+                    android:id="@+id/more_text_size_largest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="#00000000"
+                    android:padding="10dp"
+                    android:textColor="@drawable/more_text_color_radiobutton"
+                    android:text="超大"
+                    android:textSize="15dp"/>
+            </RadioGroup>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

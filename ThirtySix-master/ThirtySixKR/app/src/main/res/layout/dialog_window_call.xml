@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/dialog_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#fff"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="工作日 : 10:00-19:00"
+            android:textColor="#AAB1BA"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F9F9F9"/>
+
+        <Button
+            android:id="@+id/popup_call"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FFF"
+            android:text="呼叫 400-995-3636"
+            android:textColor="#4386F4"
+            android:textSize="18dp"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F9F9F9"/>
+
+        <Button
+            android:id="@+id/popup_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FFF"
+            android:text="取消"
+            android:textColor="#69707A"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

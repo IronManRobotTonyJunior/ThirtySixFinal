@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#4385f4"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/mine_iv_setting"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="right"
+                android:padding="15dp"
+                android:src="@mipmap/mine_icon_setting"/>
+
+            <RelativeLayout
+                android:id="@+id/mine_login_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true">
+
+                <com.example.dllo.thirtysixkr.tools.customview.MyCircleImage
+                    android:id="@+id/mine_civ_icon_user"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="15dp"
+                    android:src="@mipmap/common_avatar"
+                    />
+
+                <TextView
+                    android:id="@+id/mine_tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/mine_civ_icon_user"
+                    android:text="未登录"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/common_arrow"/>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/include_mine_divider"></include>
+
+                <include
+                    android:id="@+id/mine_item_order"
+                    layout="@layout/include_mine_item"></include>
+
+                <include layout="@layout/include_mine_divider"></include>
+
+                <include
+                    android:id="@+id/mine_item_account"
+                    layout="@layout/include_mine_item"></include>
+
+                <include
+                    android:id="@+id/mine_item_attestation"
+                    layout="@layout/include_mine_item"></include>
+
+                <include layout="@layout/include_mine_divider"></include>
+
+                <include
+                    android:id="@+id/mine_item_article"
+                    layout="@layout/include_mine_item"></include>
+
+                <include
+                    android:id="@+id/mine_item_company"
+                    layout="@layout/include_mine_item"></include>
+
+                <include
+                    android:id="@+id/mine_item_FOUN"
+                    layout="@layout/include_mine_item"></include>
+
+                <include
+                    android:id="@+id/mine_item_learn"
+                    layout="@layout/include_mine_item"></include>
+
+                <include layout="@layout/include_mine_divider"></include>
+
+                <include
+                    android:id="@+id/mine_item_call"
+                    layout="@layout/include_mine_item"></include>
+
+                <include layout="@layout/include_mine_divider"></include>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+</LinearLayout>

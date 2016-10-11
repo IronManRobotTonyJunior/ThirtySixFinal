@@ -17,7 +17,7 @@
             <com.youth.banner.Banner
                 android:id="@+id/find_banner"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+                android:layout_height="160dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

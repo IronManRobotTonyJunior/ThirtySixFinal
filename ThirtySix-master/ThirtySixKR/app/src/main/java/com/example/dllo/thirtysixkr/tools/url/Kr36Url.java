@@ -43,6 +43,16 @@ public final class Kr36Url {
 
     public final static String findRotate = "https://rong.36kr.com/api/mobi/roundpics/v4";
 
+    public final static String findDemoDay = "&categoryId=1&pageSize=20";
+
+    public final static String findZone = "&categoryId=4&pageSize=20";
+
+    public final static String findInvestment = "&categoryId=5&pageSize=20";
+
+    public final static String findService = "&categoryId=6&pageSize=20";
+
+    public final static String findFinance = "&categoryId=7&pageSize=20";
+
 
     public final static String news(String page, String part) {
         String str = URL_HOST + page + URL_COLUMNID + part + URL_FINAL;
@@ -55,13 +65,11 @@ public final class Kr36Url {
     }
 
 
-    public final static String findAll = "https://rong.36kr.com/api/mobi/activity/list?page=1Demo Day: https://rong.36kr.com/api/mobi/activity/list?page=1&categoryId=12+URL_PAGE_SIZE_INVEST0";
+    public final static String findAll(int page) {
+        String str = "https://rong.36kr.com/api/mobi/activity/list?page=" + page;
+        return str;
+    }
 
-    //    final static String findKrZone = "";
-//    final static String findInvestment = "";
-//    final static String findService = "";
-//    final static String findFast = "";
-//    final static String findFind = "";
     public final static String research(String str) {
         String url = "https://rong.36kr.com/api/mobi/news/search?keyword=" + str + "&page=1&pageSize=20";
         return url;
@@ -71,8 +79,9 @@ public final class Kr36Url {
         String url = "https://rong.36kr.com/api/mobi/news/" + str;
         return url;
     }
-    public final static String authorDetails(String str){
-        String url = "https://rong.36kr.com/api/mobi/news/" + str+"/author-region";
+
+    public final static String authorDetails(String str) {
+        String url = "https://rong.36kr.com/api/mobi/news/" + str + "/author-region";
         return url;
     }
 

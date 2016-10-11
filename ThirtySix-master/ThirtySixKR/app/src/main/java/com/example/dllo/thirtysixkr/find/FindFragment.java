@@ -90,6 +90,8 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.find_recent_activity:
+                Intent intentRecent = new Intent(getActivity(),RecentActivity.class);
+                startActivity(intentRecent);
                 break;
             case R.id.find_btn_found:
                 break;

@@ -2,8 +2,8 @@ package com.example.dllo.thirtysixkr.investment;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,10 +26,14 @@ public class ChildFragmentAdapter extends BaseAdapter {
 
     private Context context;
     private List<InvestmentBean.Data.DataBean> beans;
+    private final Drawable drawableNormal;
+    private final Drawable drawable;
 
     public ChildFragmentAdapter(Context context) {
         this.context = context;
         beans = new ArrayList<>();
+        drawableNormal = context.getResources().getDrawable(R.drawable.layer_list);
+        drawable = context.getResources().getDrawable(R.drawable.layer_list_orange);
     }
 
     public void setBeans(List<InvestmentBean.Data.DataBean> beans) {
@@ -68,21 +72,53 @@ public class ChildFragmentAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+        InvestmentBean.Data.DataBean bean = (InvestmentBean.Data.DataBean) getItem(position);
 
-        Picasso.with(context).load(beans.get(position).getCompany_logo()).transform(new CropSquareTransformation()).into(viewHolder.userIcon);
-        Picasso.with(context).load(beans.get(position).getFile_list_img()).into(viewHolder.itemInvestmentImg);
+        Picasso.with(context).load(bean.getCompany_logo()).transform(new CropSquareTransformation()).into(viewHolder.userIcon);
+        Picasso.with(context).load(bean.getFile_list_img()).into(viewHolder.itemInvestmentImg);
 
 
-        viewHolder.tvItemBrief.setText(beans.get(position).getCompany_brief());
-        viewHolder.tvItemName.setText(beans.get(position).getCompany_name());
-        viewHolder.tvInputLeader.setText(beans.get(position).getLead_name());
-        viewHolder.tvInputFounder.setText(beans.get(position).getCf_advantage().get(0).getAdcontent());
-        viewHolder.tvInputHatch.setText(beans.get(position).getCf_advantage().get(1).getAdcontent());
-        viewHolder.tvInputDesc.setText(beans.get(position).getFundStatus().getDesc());
+        viewHolder.tvItemBrief.setText(bean.getCompany_brief());
+        viewHolder.tvItemName.setText(bean.getCompany_name());
+        viewHolder.tvInputLeader.setText(bean.getLead_name());
+        viewHolder.tvInputFounder.setText(bean.getCf_advantage().get(0).getAdcontent());
+        viewHolder.tvInputHatch.setText(bean.getCf_advantage().get(1).getAdcontent());
 
-        switch (beans.get(position).getFundStatus().getDesc()) {
+        switch (bean.getFundStatus().getCrowd_funding_status()) {
+            case "MAO_DING":
+                viewHolder.tvInputDesc.setText("锚定中");
+                viewHolder.pb.setProgress((int) (bean.getRate() * 100));
+                viewHolder.tvInputRate.setText(bean.getFundStatus().getDesc());
+//                viewHolder.pb.setProgressDrawable(drawableNormal);
+                break;
+            default:
+                viewHolder.tvInputDesc.setText(bean.getFundStatus().getDesc());
+                if (bean.getRate() >= 1) {
+                    viewHolder.tvInputRate.setText("已募资" + (bean.getRate() * 100 + "").substring(0, 3) + "%");
+                    viewHolder.pb.setProgress(100);
+//                    viewHolder.pb.setProgressDrawable(drawable);
+                } else {
+                    viewHolder.pb.setProgress((int) (bean.getRate() * 100));
+                    Log.d("ChildFragmentAdapter", "bean.getRate():" + bean.getRate());
+                    viewHolder.tvInputRate.setText("已募资" + (bean.getRate() * 100 + "").substring(0, 2) + "%");
+//                    viewHolder.pb.setProgressDrawable(drawableNormal);
+                }
+                break;
+        }
+
+
+        switch (viewHolder.tvInputDesc.getText() + "") {
             case "募资中":
                 viewHolder.tvInputDesc.setTextColor(Color.parseColor("#4285f4"));
+                viewHolder.itemInvestmentBought.setText("认购");
+                viewHolder.itemInvestmentBought.setTextColor(Color.WHITE);
+                viewHolder.itemInvestmentBought.setBackgroundResource(R.drawable.shape_bought);
+                break;
+            case "锚定中":
+                viewHolder.tvInputDesc.setTextColor(Color.parseColor("#FF6E0E"));
+                viewHolder.itemInvestmentBought.setText("认购");
+                viewHolder.itemInvestmentBought.setTextColor(Color.WHITE);
+                viewHolder.itemInvestmentBought.setBackgroundResource(R.drawable.shape_bought);
                 break;
             default:
                 viewHolder.tvInputDesc.setTextColor(Color.GRAY);
@@ -90,19 +126,6 @@ public class ChildFragmentAdapter extends BaseAdapter {
                 viewHolder.itemInvestmentBought.setText("去看看");
                 viewHolder.itemInvestmentBought.setTextColor(Color.GRAY);
                 break;
-        }
-
-        if (beans.get(position).getRate() >= 1) {
-            viewHolder.tvInputRate.setText((beans.get(position).getRate() * 100 + "").substring(0, 3) + "%");
-            viewHolder.pb.setProgress(100);
-            Drawable d = new ColorDrawable(0xfff87167);
-            viewHolder.pb.setProgressDrawable(d);
-
-//            Log.d("ChildFragmentAdapter", "beans.get(position).getRate():" + beans.get(position).getRate());
-
-        } else {
-            viewHolder.pb.setProgress((int) (beans.get(position).getRate() * 100));
-            viewHolder.tvInputRate.setText((beans.get(position).getRate() * 100 + "").substring(0, 2) + "%");
         }
 
 

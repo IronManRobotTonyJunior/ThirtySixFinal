@@ -3,18 +3,20 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:orientation="vertical"
               android:paddingBottom="35dp"
-              android:paddingTop="15dp"
-              android:orientation="vertical">
+              android:paddingTop="15dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <com.example.dllo.thirtysixkr.tools.customview.MyCircleImage
+            android:src="@mipmap/ic_launcher"
             android:id="@+id/item_investment_user_icon"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             app:is_circle="true"
             />
@@ -22,8 +24,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_toRightOf="@id/item_investment_user_icon">
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/item_investment_user_icon"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/item_investment_name"
@@ -37,6 +40,7 @@
                 android:id="@+id/item_investment_brief"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="90dp"
                 android:singleLine="true"
                 android:text="2"
                 />
@@ -46,12 +50,12 @@
             android:id="@+id/item_investment_focus"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:textColor="#629af6"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/shape_focus"
             android:text="关注"
+            android:textColor="#629af6"
             />
 
     </RelativeLayout>
@@ -93,8 +97,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:padding="5dp"
             android:layout_marginRight="5dp"
+            android:padding="5dp"
             android:text="领投方"/>
 
         <TextView
@@ -102,8 +106,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
             android:layout_below="@id/tv_lead"
+            android:layout_marginRight="5dp"
             android:padding="5dp"
             android:text="创始人"/>
 
@@ -112,8 +116,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
             android:layout_below="@id/tv_founder"
+            android:layout_marginRight="5dp"
             android:padding="5dp"
             android:text="孵化器"/>
     </RelativeLayout>
@@ -132,19 +136,19 @@
             android:id="@+id/tv_input_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
             android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
             />
 
         <ProgressBar
             android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="230dp"
-            android:layout_marginTop="5dp"
             android:layout_height="10dp"
             android:layout_below="@id/tv_input_desc"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
             android:progressDrawable="@drawable/layer_list"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
 
             />
 
@@ -152,17 +156,10 @@
             android:id="@+id/tv_input_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_alignEnd="@id/progress_bar"
-            android:textColor="#999"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/tv_input_rate"
-            android:textColor="#999"
             android:layout_marginTop="15dp"
-            android:text="已募资"/>
+            android:textSize="10dp"
+            android:textColor="#999"/>
 
         <Button
             android:id="@+id/item_investment_buy"
@@ -171,9 +168,9 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:textColor="#fff"
             android:background="@drawable/shape_bought"
             android:text="认购"
+            android:textColor="#fff"
             />
 
     </RelativeLayout>

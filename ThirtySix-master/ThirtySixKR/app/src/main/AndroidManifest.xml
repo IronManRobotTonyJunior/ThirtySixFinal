@@ -35,6 +35,8 @@
             android:theme="@style/CustomTiTleLan">
 
         </activity>
+        <activity android:name=".find.RecentActivity"
+            android:theme="@style/CustomTiTleLan"/>
     </application>
 
 </manifest>

@@ -276,36 +276,36 @@ public class WebDetailActivity extends BaseActivity implements View.OnClickListe
 //        imgShare.setOnClickListener(this);
 //        imgMore.setOnClickListener(this);
 //
-////    private class MyWebViewClient extends WebViewClient {
-////        @Override
-////        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//////            view.loadUrl(url);
-////            return true;
-////        }
-////
-////
-////
-////    }
+//    private class MyWebViewClient extends WebViewClient {
+//        @Override
+//        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//            view.loadUrl(url);
+//            return true;
+//        }
 //
-////    @Override
-////    public boolean onKeyDown(int keyCode, KeyEvent event) {
-////        if ((keyCode == KeyEvent.KEYCODE_BACK) && wb.canGoBack()) {
-////            wb.goBack(); //goBack()表示返回WebView的上一页面
-////            return true;
-////        }
-////        return false;
-////    }
+//
+//
+//    }
+//
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if ((keyCode == KeyEvent.KEYCODE_BACK) && wb.canGoBack()) {
+//            wb.goBack(); //goBack()表示返回WebView的上一页面
+//            return true;
+//        }
+//        return false;
+//    }
 //    }
 
 
-    //    public static void struct() {
+//        public static void struct() {
 //        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-//                .detectDiskReads().detectDiskWrites().detectNetwork() // or
-//                // .detectAll()
-//                // for
-//                // all
-//                // detectable
-//                // problems
+//                .detectDiskReads().detectDiskWrites().detectNetwork() or
+//                .detectAll()
+//                 for
+//                 all
+//                 detectable
+//                 problems
 //                .penaltyLog().build());
 //        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 //                .detectLeakedSqlLiteObjects() // 探测SQLite数据库操作

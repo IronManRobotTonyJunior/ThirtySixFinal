@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/find_style_ll"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:visibility="gone"
+              android:background="#99808080"
+    >
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <RadioButton
+            android:id="@+id/find_style_all"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:paddingLeft="50dp"
+            android:checked="true"
+            android:text="全部"
+            android:textColor="@drawable/selector_find_activity_style"
+            android:textSize="15dp"/>
+
+        <RadioButton
+            android:id="@+id/find_style_demo_day"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:paddingLeft="50dp"
+            android:text="Demo Day"
+            android:textColor="@drawable/selector_find_activity_style"
+            android:textSize="15dp"/>
+
+        <RadioButton
+            android:id="@+id/find_style_zone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:paddingLeft="50dp"
+            android:text="氪空间"
+            android:textColor="@drawable/selector_find_activity_style"
+            android:textSize="15dp"/>
+
+        <RadioButton
+            android:id="@+id/find_style_investment"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:paddingLeft="50dp"
+            android:text="股权投资"
+            android:textColor="@drawable/selector_find_activity_style"
+            android:textSize="15dp"/>
+
+        <RadioButton
+            android:id="@+id/find_style_service"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:paddingLeft="50dp"
+            android:text="企业服务"
+            android:textColor="@drawable/selector_find_activity_style"
+            android:textSize="15dp"/>
+
+        <RadioButton
+            android:id="@+id/find_style_financing"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:paddingLeft="50dp"
+            android:text="急速融资"
+            android:textColor="@drawable/selector_find_activity_style"
+            android:textSize="15dp"/>
+    </RadioGroup>
+</LinearLayout>

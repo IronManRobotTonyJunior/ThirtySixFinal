@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:contextClickable="true"
+              android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/recent_activity_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:minHeight="150dp"/>
+
+    <TextView
+        android:id="@+id/recent_activity_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="#222C38"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/recent_activity_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="#969FA9"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/recent_activity_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="1dp"
+            android:textColor="#fff"
+            android:textSize="10dp"/>
+
+
+        <TextView
+            android:id="@+id/recent_activity_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableLeft="@mipmap/common_icon_location"
+            android:layout_toEndOf="@id/recent_activity_state"
+            android:textSize="10dp"
+            />
+
+        <TextView
+            android:id="@+id/recent_activity_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:textSize="10dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

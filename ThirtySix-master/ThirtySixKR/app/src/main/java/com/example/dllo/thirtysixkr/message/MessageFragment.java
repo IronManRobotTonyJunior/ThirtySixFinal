@@ -1,7 +1,10 @@
 package com.example.dllo.thirtysixkr.message;
 
-import com.example.dllo.thirtysixkr.BaseFragment;
+import android.content.Intent;
+
+import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.login.LoginActivity;
 
 public class MessageFragment extends BaseFragment {
     @Override
@@ -11,6 +14,8 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        startActivity(intent);
 
     }
 

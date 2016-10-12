@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.ListView;
 
-import com.example.dllo.thirtysixkr.BaseFragment;
+import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;
 import com.example.dllo.thirtysixkr.tools.webrequest.SendGetRequest;

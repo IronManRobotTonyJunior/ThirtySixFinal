@@ -31,12 +31,17 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.example.dllo.thirtysixkr.BaseActivity;
+import com.example.dllo.thirtysixkr.base.BaseActivity;
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.news.FormatTime;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;
 import com.example.dllo.thirtysixkr.tools.webrequest.SendGetRequest;
 import com.example.dllo.thirtysixkr.web.richtext.HtmlTextView;
+
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
+import cn.sharesdk.onekeyshare.OnekeyShareTheme;
 
 public class WebDetailActivity extends BaseActivity implements View.OnClickListener {
 
@@ -91,8 +96,6 @@ public class WebDetailActivity extends BaseActivity implements View.OnClickListe
     private Dialog dialogMore;
     private Dialog dialogShare;
     private RelativeLayout rlMore;
-    //    private final static String COLOR_BULE = "#4285F4";
-//    private final static String COLOR_NORMAL = "#98A1AB";
     private final static float TEXT_SIZE_TINY = 10;
     private final static float TEXT_SIZE_MIDDLE = 15;
     private final static float TEXT_SIZE_BIG = 20;
@@ -101,6 +104,7 @@ public class WebDetailActivity extends BaseActivity implements View.OnClickListe
     private SharedPreferences sp;
     private float textSize;
     private RadioGroup radioGroup;
+    private Platform playform;
 
     @Override
     protected int setLayout() {
@@ -505,27 +509,33 @@ public class WebDetailActivity extends BaseActivity implements View.OnClickListe
                 dialogShare.dismiss();
                 break;
             case R.id.share_wechat:
-                Toast.makeText(this, "手机未安装微信", Toast.LENGTH_SHORT).show();
+                playform = ShareSDK.getPlatform("Wechat");
+                showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_moment:
-                Toast.makeText(this, "手机未安装微信", Toast.LENGTH_SHORT).show();
+                playform = ShareSDK.getPlatform("WechatMoments");
+                showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_weibo:
-                Toast.makeText(this, "手机未安装微博", Toast.LENGTH_SHORT).show();
+                playform = ShareSDK.getPlatform("SinaWeibo");
+                showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_qq:
-                Toast.makeText(this, "手机未安装马老二", Toast.LENGTH_SHORT).show();
+                playform = ShareSDK.getPlatform("QQ");
+                showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_alipay:
-                Toast.makeText(this, "手机未安装支付宝", Toast.LENGTH_SHORT).show();
+                playform = ShareSDK.getPlatform("Alipay");
+                showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_living:
-                Toast.makeText(this, "手机未安装支付宝", Toast.LENGTH_SHORT).show();
+                playform = ShareSDK.getPlatform("Wechat");
+                showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_link:
@@ -547,40 +557,24 @@ public class WebDetailActivity extends BaseActivity implements View.OnClickListe
                 tv.setTextSize(TEXT_SIZE_TINY);
                 spET.putInt("radioButtonId", R.id.more_text_size_tiny);
                 tvTiny.setChecked(true);
-//                tvTiny.setTextColor(Color.parseColor(COLOR_BULE));
-//                tvMiddle.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvBig.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvLargest.setTextColor(Color.parseColor(COLOR_NORMAL));
                 break;
             case R.id.more_text_size_middle:
                 spET.putFloat("textSize", TEXT_SIZE_MIDDLE);
                 tv.setTextSize(TEXT_SIZE_MIDDLE);
                 spET.putInt("radioButtonId", R.id.more_text_size_middle);
                 tvMiddle.setChecked(true);
-//                tvTiny.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvMiddle.setTextColor(Color.parseColor(COLOR_BULE));
-//                tvBig.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvLargest.setTextColor(Color.parseColor(COLOR_NORMAL));
                 break;
             case R.id.more_text_size_big:
                 spET.putFloat("textSize", TEXT_SIZE_BIG);
                 tv.setTextSize(TEXT_SIZE_BIG);
                 spET.putInt("radioButtonId", R.id.more_text_size_big);
                 tvBig.setChecked(true);
-//                tvTiny.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvMiddle.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvBig.setTextColor(Color.parseColor(COLOR_BULE));
-//                tvLargest.setTextColor(Color.parseColor(COLOR_NORMAL));
                 break;
             case R.id.more_text_size_largest:
                 spET.putFloat("textSize", TEXT_SIZE_LARGEST);
                 tv.setTextSize(TEXT_SIZE_LARGEST);
                 spET.putInt("radioButtonId", R.id.more_text_size_largest);
                 tvLargest.setChecked(true);
-//                tvTiny.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvMiddle.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvBig.setTextColor(Color.parseColor(COLOR_NORMAL));
-//                tvLargest.setTextColor(Color.parseColor(COLOR_BULE));
                 break;
             case R.id.web_more:
                 dialogMore.dismiss();
@@ -627,4 +621,91 @@ public class WebDetailActivity extends BaseActivity implements View.OnClickListe
         overridePendingTransition(R.anim.activity_in, 0);
         popupWindowUp.dismiss();
     }
+    public static void showShare(Context context, String platformToShare, boolean showContentEdit) {
+        OnekeyShare oks = new OnekeyShare();
+        oks.setSilent(!showContentEdit);
+        if (platformToShare != null) {
+            oks.setPlatform(platformToShare);
+        }
+        //ShareSDK快捷分享提供两个界面第一个是九宫格 CLASSIC  第二个是SKYBLUE
+        oks.setTheme(OnekeyShareTheme.CLASSIC);
+        // 令编辑页面显示为Dialog模式
+        oks.setDialogMode();
+        // 在自动授权时可以禁用SSO方式
+        oks.disableSSOWhenAuthorize();
+        //oks.setAddress("12345678901"); //分享短信的号码和邮件的地址
+        oks.setTitle("ShareSDK--Title");
+        oks.setTitleUrl("http://mob.com");
+        oks.setText("ShareSDK--文本");
+        //oks.setImagePath("/sdcard/test-pic.jpg");  //分享sdcard目录下的图片
+        oks.setImageUrl(randomPic()[0]);
+        oks.setUrl("http://www.mob.com"); //微信不绕过审核分享链接
+        //oks.setFilePath("/sdcard/test-pic.jpg");  //filePath是待分享应用程序的本地路劲，仅在微信（易信）好友和Dropbox中使用，否则可以不提供
+        oks.setComment("分享"); //我对这条分享的评论，仅在人人网和QQ空间使用，否则可以不提供
+        oks.setSite("ShareSDK");  //QZone分享完之后返回应用时提示框上显示的名称
+        oks.setSiteUrl("http://mob.com");//QZone分享参数
+        oks.setVenueName("ShareSDK");
+        oks.setVenueDescription("This is a beautiful place!");
+        // 将快捷分享的操作结果将通过OneKeyShareCallback回调
+        //oks.setCallback(new OneKeyShareCallback());
+        // 去自定义不同平台的字段内容
+        //oks.setShareContentCustomizeCallback(new ShareContentCustomizeDemo());
+        // 在九宫格设置自定义的图标
+        String label = "ShareSDK";
+        View.OnClickListener listener = new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        };
+
+        // 为EditPage设置一个背景的View
+        //oks.setEditPageBackground(getPage());
+        // 隐藏九宫格中的新浪微博
+        // oks.addHiddenPlatform(SinaWeibo.NAME);
+
+        // String[] AVATARS = {
+        // 		"http://99touxiang.com/public/upload/nvsheng/125/27-011820_433.jpg",
+        // 		"http://img1.2345.com/duoteimg/qqTxImg/2012/04/09/13339485237265.jpg",
+        // 		"http://diy.qqjay.com/u/files/2012/0523/f466c38e1c6c99ee2d6cd7746207a97a.jpg",
+        // 		"http://diy.qqjay.com/u2/2013/0422/fadc08459b1ef5fc1ea6b5b8d22e44b4.jpg",
+        // 		"http://img1.2345.com/duoteimg/qqTxImg/2012/04/09/13339510584349.jpg",
+        // 		"http://diy.qqjay.com/u2/2013/0401/4355c29b30d295b26da6f242a65bcaad.jpg" };
+        // oks.setImageArray(AVATARS);              //腾讯微博和twitter用此方法分享多张图片，其他平台不可以
+
+        // 启动分享
+        oks.show(context);
+    }
+    public static String[] randomPic() {
+        String url = "http://git.oschina.net/alexyu.yxj/MyTmpFiles/raw/master/kmk_pic_fld/";
+        String urlSmall = "http://git.oschina.net/alexyu.yxj/MyTmpFiles/raw/master/kmk_pic_fld/small/";
+        String[] pics = new String[] {
+                "120.JPG",
+                "127.JPG",
+                "130.JPG",
+                "18.JPG",
+                "184.JPG",
+                "22.JPG",
+                "236.JPG",
+                "237.JPG",
+                "254.JPG",
+                "255.JPG",
+                "263.JPG",
+                "265.JPG",
+                "273.JPG",
+                "37.JPG",
+                "39.JPG",
+                "IMG_2219.JPG",
+                "IMG_2270.JPG",
+                "IMG_2271.JPG",
+                "IMG_2275.JPG",
+                "107.JPG"
+        };
+        int index = (int) (System.currentTimeMillis() % pics.length);
+        return new String[] {
+                url + pics[index],
+                urlSmall + pics[index]
+        };
+    }
+
+
 }

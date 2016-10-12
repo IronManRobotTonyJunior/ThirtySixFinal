@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.dllo.thirtysixkr.BaseFragment;
+import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.R;
 
 public class MineFragment extends BaseFragment implements View.OnClickListener {

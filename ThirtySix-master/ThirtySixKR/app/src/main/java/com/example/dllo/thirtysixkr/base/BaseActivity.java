@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr;
+package com.example.dllo.thirtysixkr.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

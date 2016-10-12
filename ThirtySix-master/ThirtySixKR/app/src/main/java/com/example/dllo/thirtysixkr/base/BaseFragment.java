@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr;
+package com.example.dllo.thirtysixkr.base;
 
 import android.content.Context;
 import android.os.Bundle;

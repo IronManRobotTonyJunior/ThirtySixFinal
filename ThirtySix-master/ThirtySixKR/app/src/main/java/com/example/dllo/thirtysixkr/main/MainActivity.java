@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr;
+package com.example.dllo.thirtysixkr.main;
 
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 
+import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.base.BaseActivity;
 import com.example.dllo.thirtysixkr.find.FindFragment;
 import com.example.dllo.thirtysixkr.investment.InvestmentFragment;
 import com.example.dllo.thirtysixkr.message.MessageFragment;
@@ -65,17 +67,6 @@ public class MainActivity extends BaseActivity {
         tb.setSelectedTabIndicatorColor(Color.parseColor("#4285f4"));
         tb.setTabTextColors(Color.GRAY, Color.parseColor("#4285f4"));
 
-//        SendGetRequest.sendGetRequest("http://www.baidu.com", NewsBean.class, new SendGetRequest.OnResponseListener<NewsBean>() {
-//            @Override
-//            public void onResponse(NewsBean response) {
-//
-//            }
-//
-//            @Override
-//            public void onError() {
-//
-//            }
-//        });
 
 
     }

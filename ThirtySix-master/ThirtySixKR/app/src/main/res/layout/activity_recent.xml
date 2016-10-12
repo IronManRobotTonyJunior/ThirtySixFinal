@@ -10,6 +10,7 @@
 
         <ImageView
             android:layout_width="40dp"
+            android:id="@+id/activity_recent_img_back"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:src="@mipmap/news_toolbar_icon_back"/>
@@ -31,6 +32,7 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:id="@+id/activity_recent_rg"
         android:orientation="horizontal">
 
         <RadioButton
@@ -76,6 +78,13 @@
             android:id="@+id/recent_lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recent_gray_background"
+            android:background="#99808080"
+            android:visibility="gone"/>
+
         <include layout="@layout/find_style"/>
 
         <include layout="@layout/find_time"/>

@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import com.example.dllo.thirtysixkr.MyApp;
+import com.example.dllo.thirtysixkr.main.MyApp;
 import com.example.dllo.thirtysixkr.search.HistoryBean;
 import com.litesuits.orm.LiteOrm;
 

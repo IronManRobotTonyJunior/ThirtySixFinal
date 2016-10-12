@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.dllo.thirtysixkr.BaseFragment;
+import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.news.RingBean;
 import com.example.dllo.thirtysixkr.search.SearchActivity;
@@ -98,6 +98,8 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
             case R.id.find_btn_professor:
                 break;
             case R.id.find_rl_find_investor:
+                Intent intentInvestor = new Intent(getActivity(), InvestorActivity.class);
+                startActivity(intentInvestor);
                 break;
         }
 

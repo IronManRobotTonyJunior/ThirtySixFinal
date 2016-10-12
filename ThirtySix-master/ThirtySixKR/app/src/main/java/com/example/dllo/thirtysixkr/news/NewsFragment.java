@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.dllo.thirtysixkr.BaseFragment;
+import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.search.SearchActivity;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;

@@ -53,6 +53,8 @@ public final class Kr36Url {
 
     public final static String findFinance = "&categoryId=7&pageSize=20";
 
+    public final static String findInvestor = "https://rong.36kr.com/api/mobi/investor?page=1&pageSize=20";
+
 
     public final static String news(String page, String part) {
         String str = URL_HOST + page + URL_COLUMNID + part + URL_FINAL;

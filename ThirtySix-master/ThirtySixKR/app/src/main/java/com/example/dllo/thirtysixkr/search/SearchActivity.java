@@ -16,7 +16,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.dllo.thirtysixkr.BaseActivity;
+import com.example.dllo.thirtysixkr.base.BaseActivity;
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.news.NewsAdapter;
 import com.example.dllo.thirtysixkr.news.NewsBean;

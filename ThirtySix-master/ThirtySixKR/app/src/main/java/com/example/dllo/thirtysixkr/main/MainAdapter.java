@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr;
+package com.example.dllo.thirtysixkr.main;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

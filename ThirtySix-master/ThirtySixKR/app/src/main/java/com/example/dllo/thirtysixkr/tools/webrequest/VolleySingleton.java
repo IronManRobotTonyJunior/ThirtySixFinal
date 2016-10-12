@@ -3,7 +3,7 @@ package com.example.dllo.thirtysixkr.tools.webrequest;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.example.dllo.thirtysixkr.MyApp;
+import com.example.dllo.thirtysixkr.main.MyApp;
 
 public class VolleySingleton {
 

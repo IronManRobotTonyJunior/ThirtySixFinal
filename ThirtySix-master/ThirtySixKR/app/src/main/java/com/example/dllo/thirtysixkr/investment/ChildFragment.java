@@ -15,6 +15,11 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 public class ChildFragment extends BaseFragment {
 
     private int page;
+    private String url;
+    private PullToRefreshListView pullToRefreshListView;
+    private Context context;
+    private ChildFragmentAdapter adapter;
+
 
     public static Fragment newInstance(int page, String type) {
         Bundle args = new Bundle();
@@ -24,12 +29,6 @@ public class ChildFragment extends BaseFragment {
         fragment.setArguments(args);
         return fragment;
     }
-
-    private String url;
-    private PullToRefreshListView pullToRefreshListView;
-    private Context context;
-    private ChildFragmentAdapter adapter;
-
 
     @Override
     protected int setLayout() {

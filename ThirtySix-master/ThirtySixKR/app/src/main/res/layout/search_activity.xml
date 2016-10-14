@@ -32,6 +32,7 @@
             android:background="@drawable/shape_bank_edittext"
             android:hint="搜索新闻/用户/公司"
             android:imeOptions="actionSearch"
+            android:singleLine="true"
             android:textColorHint="#9CA3AC"
             />
 
@@ -69,22 +70,24 @@
 
     <RelativeLayout
         android:id="@+id/search_rl"
-        android:visibility="invisible"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
         <ImageView
-            android:layout_width="160dp"
             android:id="@+id/center_iv"
+            android:layout_width="160dp"
             android:layout_height="160dp"
-            android:src="@mipmap/search_ph_search"
-            android:layout_marginTop="98dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="98dp"
+            android:src="@mipmap/search_ph_search"/>
+
         <TextView
-            android:layout_below="@id/center_iv"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/center_iv"
+            android:layout_centerInParent="true"
             android:text="无搜索记录"
             android:textColor="#97A0AA"
             />
@@ -92,10 +95,10 @@
     </RelativeLayout>
 
     <ListView
-        android:layout_margin="15dp"
         android:id="@+id/search_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="15dp"
         android:visibility="invisible">
 
     </ListView>

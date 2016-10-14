@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 
 public class MyDrawable extends BitmapDrawable {
-    Bitmap bitmap;
+    private Bitmap bitmap;
 
     @Override
     public void draw(Canvas canvas) {

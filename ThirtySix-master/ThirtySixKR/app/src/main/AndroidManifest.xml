@@ -57,6 +57,12 @@
         <activity
             android:name=".login.LoginActivity"
             android:theme="@style/CustomTiTleLan"/>
+        <activity
+            android:name=".SettingActivity"
+            android:theme="@style/CustomTiTleLan"/>
+        <activity
+            android:name=".MessageSettingActivity"
+            android:theme="@style/CustomTiTleLan"/>
 
         <activity
             android:name="com.mob.tools.MobUIShell"
@@ -90,6 +96,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
     </application>
 
 </manifest>

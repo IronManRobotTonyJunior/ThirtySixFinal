@@ -30,7 +30,7 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
 
     private DrawerLayout drawerLayout;
     private LinearLayout left;
-    private ArrayList<String> imageViews;
+    private ArrayList<String> imageViews = new ArrayList<>();
     private ImageView ivDrawer;
     private ImageView ivSearch;
     private ImageView ivBack;
@@ -169,7 +169,7 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
         SendGetRequest.sendGetRequest(Kr36Url.newRotate, RingBean.class, new SendGetRequest.OnResponseListener<RingBean>() {
             @Override
             public void onResponse(RingBean response) {
-                imageViews = new ArrayList<String>();
+                imageViews.clear();
                 for (int i = 0; i < response.getData().getPics().size(); i++) {
                     imageViews.add(response.getData().getPics().get(i).getImgUrl());
                 }

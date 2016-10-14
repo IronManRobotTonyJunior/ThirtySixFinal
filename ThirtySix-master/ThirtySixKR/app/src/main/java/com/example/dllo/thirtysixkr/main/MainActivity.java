@@ -1,10 +1,10 @@
 package com.example.dllo.thirtysixkr.main;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.base.BaseActivity;
@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
     private ViewPager vp;
     private TabLayout tb;
     private long timeSeconds;
+    private int lastFragment = 0;
 
 
     @Override
@@ -48,8 +49,6 @@ public class MainActivity extends BaseActivity {
         timeSeconds = Calendar.getInstance().getTimeInMillis();
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
         String str = format.format(timeSeconds);
-        Log.d("MainActivity", "timeSeconds"+ str.substring(8,10));
-
     }
 
     @Override
@@ -68,6 +67,29 @@ public class MainActivity extends BaseActivity {
         tb.setTabTextColors(Color.GRAY, Color.parseColor("#4285f4"));
 
 
+        tb.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+            }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                if (tab.getPosition() != 3) {
+                    lastFragment = tab.getPosition();
+                }
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
+        });
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        vp.setCurrentItem(lastFragment);
     }
 }

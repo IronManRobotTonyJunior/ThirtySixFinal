@@ -8,4 +8,5 @@
     <color name="colorRadioButtonMoreChecked">#4285F4</color>
     <color name="colorFindActivityRadioButtonNormal">#6A6A6A</color>
     <color name="colorFindActivityRadioButtonChecked">#0F94F3</color>
+    <color name="colorLoginEditText">#9D9D9D</color>
 </resources>

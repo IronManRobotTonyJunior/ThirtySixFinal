@@ -6,7 +6,7 @@ import com.litesuits.orm.db.enums.AssignType;
 public class HistoryBean {
     @PrimaryKey(AssignType.AUTO_INCREMENT)
     private int id;
-    String historyQuery;
+    private String historyQuery;
 
     public int getId() {
         return id;

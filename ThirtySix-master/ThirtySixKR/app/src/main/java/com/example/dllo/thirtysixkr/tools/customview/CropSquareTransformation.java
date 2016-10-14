@@ -5,8 +5,8 @@ import android.graphics.Bitmap;
 import com.squareup.picasso.Transformation;
 
 public class CropSquareTransformation implements Transformation {
-    int targetWidth = 80;
-    int targetHeight = 80;
+    private int targetWidth = 80;
+    private int targetHeight = 80;
     @Override
     public Bitmap transform(Bitmap source) {
         if (source.getWidth() == 0 || source.getHeight() == 0) {

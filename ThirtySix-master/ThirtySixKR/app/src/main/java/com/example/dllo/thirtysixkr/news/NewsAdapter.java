@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewsAdapter extends BaseAdapter {
-    Context context;
-    List<NewsBean.Data.DataBean> beans;
+    private Context context;
+    private List<NewsBean.Data.DataBean> beans;
 
     public NewsAdapter(Context context) {
         this.context = context;

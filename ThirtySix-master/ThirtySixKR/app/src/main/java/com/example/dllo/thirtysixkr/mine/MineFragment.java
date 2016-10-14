@@ -1,5 +1,6 @@
 package com.example.dllo.thirtysixkr.mine;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,8 +15,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.SettingActivity;
+import com.example.dllo.thirtysixkr.base.BaseFragment;
+import com.example.dllo.thirtysixkr.login.LoginActivity;
 
 public class MineFragment extends BaseFragment implements View.OnClickListener {
 
@@ -30,6 +33,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private View viewCall;
     private RelativeLayout dialog_all;
     private Dialog dialog;
+    private Intent intentLogin;
 
 
     @Override
@@ -39,6 +43,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initView() {
+        intentLogin = new Intent(mContext, LoginActivity.class);
         View viewOrder = bindView(R.id.mine_item_order);
         View viewAccount = bindView(R.id.mine_item_account);
         View viewAttestation = bindView(R.id.mine_item_attestation);
@@ -46,6 +51,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         View viewCompany = bindView(R.id.mine_item_company);
         View viewFOUN = bindView(R.id.mine_item_FOUN);
         View viewLearn = bindView(R.id.mine_item_learn);
+        ImageView imgSetting = bindView(R.id.mine_iv_setting);
+        imgSetting.setOnClickListener(this);
         viewCall = bindView(R.id.mine_item_call);
 
         ImageView imageViewAccount = bindView(R.id.mine_include_iv, viewAccount);
@@ -106,26 +113,30 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-//        if (dialog != null && dialog.isShowing()) {
-//            dialog.dismiss();
-//        }
         switch (v.getId()) {
             case R.id.dialog_all:
                 dialog.dismiss();
                 break;
             case R.id.mine_item_order:
+                intentLogin();
                 break;
             case R.id.mine_item_account:
+                intentLogin();
                 break;
             case R.id.mine_item_attestation:
+                intentLogin();
                 break;
             case R.id.mine_item_article:
+                intentLogin();
                 break;
             case R.id.mine_item_company:
+                intentLogin();
                 break;
             case R.id.mine_item_FOUN:
+                intentLogin();
                 break;
             case R.id.mine_item_learn:
+                intentLogin();
                 break;
             case R.id.mine_item_call:
                 initDialog();
@@ -139,6 +150,10 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.popup_cancel:
                 dialog.dismiss();
+                break;
+            case R.id.mine_iv_setting:
+                Intent intentSetting = new Intent(mContext, SettingActivity.class);
+                startActivity(intentSetting);
                 break;
             default:
                 break;
@@ -191,5 +206,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 //
 
 
+    }
+
+    private void intentLogin() {
+        ((Activity) mContext).startActivityForResult(intentLogin, 100);
     }
 }

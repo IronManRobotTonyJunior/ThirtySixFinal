@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/setting_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="设置"
+            android:textSize="18dp"/>
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EAEAEA"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EAEAEA"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#F9F9F9"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/setting_tv_wifi"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFF"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="消息推送"
+            />
+
+        <Switch
+            android:id="@+id/setting_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:checked="true"/>
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EAEAEA"/>
+
+    <LinearLayout
+        android:id="@+id/ll_message_setting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_margin="5dp"
+            android:background="#F9F9F9"
+            android:paddingLeft="10dp"
+            android:text="可及时和创业者及投资人沟通交流"
+            android:textColor="#9BA4AD"
+            android:textSize="10dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EAEAEA"/>
+
+
+        <TextView
+            android:id="@+id/setting_tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFF"
+            android:drawableRight="@mipmap/compose_icon__checked"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="全天开启"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#F3F3F3"/>
+
+        <TextView
+            android:id="@+id/setting_tv_clear"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFF"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="只在白天开启"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_margin="5dp"
+            android:background="#F9F9F9"
+            android:paddingLeft="10dp"
+            android:text="如果设置「只在白天开启」,则只在8:00-22:00之间生效"
+            android:textColor="#9BA4AD"
+            android:textSize="10dp"/>
+    </LinearLayout>
+</LinearLayout>

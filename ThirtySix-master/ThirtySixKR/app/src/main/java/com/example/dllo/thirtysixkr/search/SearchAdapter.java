@@ -12,8 +12,8 @@ import com.example.dllo.thirtysixkr.R;
 import java.util.ArrayList;
 
 public class SearchAdapter extends BaseAdapter {
-    ArrayList<HistoryBean> beans;
-    Context context;
+    private ArrayList<HistoryBean> beans;
+    private Context context;
 
     public SearchAdapter(Context context) {
         this.context = context;

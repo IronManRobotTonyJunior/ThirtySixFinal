@@ -21,7 +21,7 @@ public class InvestorBean {
      * totalPages : 212
      */
 
-    @SerializedName("data")
+    @SerializedName("tada")
     private Data d;
     private String msg;
 

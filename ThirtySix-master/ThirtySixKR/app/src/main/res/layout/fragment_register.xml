@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
               android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="30dp"
+        android:layout_margin="25dp"
         android:text="注册成为36氪用户,即享一站式创业服务"
         android:textColor="#99A2AB"/>
 
@@ -20,10 +22,10 @@
         android:id="@+id/register_btn_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@drawable/shape_bank"
+        android:layout_margin="40dp"
+        android:background="@drawable/shape_login_btn_blue"
         android:text="获取验证码"
-        android:textColor="#CDCDCD"/>
+        android:textColor="@color/colorBlueLight"/>
 
     <TextView
         android:layout_width="wrap_content"

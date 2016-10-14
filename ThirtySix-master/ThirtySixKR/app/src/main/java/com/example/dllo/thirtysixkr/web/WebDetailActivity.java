@@ -31,17 +31,22 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.example.dllo.thirtysixkr.base.BaseActivity;
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.base.BaseActivity;
 import com.example.dllo.thirtysixkr.news.FormatTime;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;
 import com.example.dllo.thirtysixkr.tools.webrequest.SendGetRequest;
 import com.example.dllo.thirtysixkr.web.richtext.HtmlTextView;
 
+import cn.sharesdk.alipay.share.Alipay;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import cn.sharesdk.onekeyshare.OnekeyShareTheme;
+import cn.sharesdk.sina.weibo.SinaWeibo;
+import cn.sharesdk.tencent.qq.QQ;
+import cn.sharesdk.wechat.friends.Wechat;
+import cn.sharesdk.wechat.moments.WechatMoments;
 
 public class WebDetailActivity extends BaseActivity implements View.OnClickListener {
 
@@ -509,27 +514,27 @@ public class WebDetailActivity extends BaseActivity implements View.OnClickListe
                 dialogShare.dismiss();
                 break;
             case R.id.share_wechat:
-                playform = ShareSDK.getPlatform("Wechat");
+                playform = ShareSDK.getPlatform(Wechat.NAME);
                 showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_moment:
-                playform = ShareSDK.getPlatform("WechatMoments");
+                playform = ShareSDK.getPlatform(WechatMoments.NAME);
                 showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_weibo:
-                playform = ShareSDK.getPlatform("SinaWeibo");
+                playform = ShareSDK.getPlatform(SinaWeibo.NAME);
                 showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_qq:
-                playform = ShareSDK.getPlatform("QQ");
+                playform = ShareSDK.getPlatform(QQ.NAME);
                 showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;
             case R.id.share_alipay:
-                playform = ShareSDK.getPlatform("Alipay");
+                playform = ShareSDK.getPlatform(Alipay.NAME);
                 showShare(this,playform.getName(),true);
                 dialogShare.dismiss();
                 break;

@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class FindFragment extends BaseFragment implements View.OnClickListener {
 
     private Banner banner;
-    private ArrayList<String> imageViews;
+    private ArrayList<String> imageViews = new ArrayList<>();
 
     @Override
     protected int setLayout() {
@@ -65,7 +65,7 @@ public class FindFragment extends BaseFragment implements View.OnClickListener {
         SendGetRequest.sendGetRequest(Kr36Url.findRotate, RingBean.class, new SendGetRequest.OnResponseListener<RingBean>() {
             @Override
             public void onResponse(RingBean response) {
-                imageViews = new ArrayList<>();
+                imageViews.clear();
                 for (int i = 0; i < response.getData().getPics().size(); i++) {
                     imageViews.add(response.getData().getPics().get(i).getImgUrl());
                 }

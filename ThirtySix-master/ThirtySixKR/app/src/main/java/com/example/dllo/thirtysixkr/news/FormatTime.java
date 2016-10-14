@@ -5,8 +5,8 @@ import java.util.Calendar;
 
 public class FormatTime {
     private static long timeMillis;
-    static String returnTime;
-    static long subtractTime;
+    private static String returnTime;
+    private static long subtractTime;
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
 
     public static String formatTime(long mTime) {

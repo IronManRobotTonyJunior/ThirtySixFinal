@@ -5,7 +5,7 @@
               android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/setting_toolbar"
+        android:id="@+id/toolbar_message_setting"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#FFF">
@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="设置"
+            android:text="消息设置"
             android:textSize="18dp"/>
     </android.support.v7.widget.Toolbar>
 
@@ -40,7 +40,7 @@
 
 
         <TextView
-            android:id="@+id/setting_tv_wifi"
+            android:id="@+id/tv_message_setting_push"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#FFF"
@@ -50,13 +50,13 @@
             />
 
         <Switch
-            android:id="@+id/setting_switch"
+            android:id="@+id/message_setting_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:checked="true"/>
+            />
     </RelativeLayout>
 
 
@@ -89,11 +89,10 @@
 
 
         <TextView
-            android:id="@+id/setting_tv_message"
+            android:id="@+id/tv_message_setting_all_day"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#FFF"
-            android:drawableRight="@mipmap/compose_icon__checked"
             android:gravity="center_vertical"
             android:padding="10dp"
             android:text="全天开启"/>
@@ -106,7 +105,7 @@
             android:background="#F3F3F3"/>
 
         <TextView
-            android:id="@+id/setting_tv_clear"
+            android:id="@+id/tv_message_setting_day"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#FFF"

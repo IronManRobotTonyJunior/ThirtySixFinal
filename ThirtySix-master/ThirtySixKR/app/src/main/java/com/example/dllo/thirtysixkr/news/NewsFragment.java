@@ -269,9 +269,11 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.tv_kr_tv:
                 banner.setVisibility(View.GONE);
-                part = Kr36Url.NEW_TV;
                 drawerLayout.closeDrawer(left);
-                pullToRefreshlv.setRefreshing(true);
+                pullToRefreshlv.setRefreshing();
+                Intent intentTV = new Intent(getActivity(), TVActivity.class);
+                startActivity(intentTV);
+                Log.d("NewsFragment", "跳啊");
                 break;
 
             case R.id.news_iv_search:

@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr;
+package com.example.dllo.thirtysixkr.setting;
 
 import android.content.Context;
 import android.os.Environment;

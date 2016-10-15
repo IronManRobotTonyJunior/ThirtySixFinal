@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.dllo.thirtysixkr.R;
-import com.example.dllo.thirtysixkr.SettingActivity;
+import com.example.dllo.thirtysixkr.setting.SettingActivity;
 import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.login.LoginActivity;
 

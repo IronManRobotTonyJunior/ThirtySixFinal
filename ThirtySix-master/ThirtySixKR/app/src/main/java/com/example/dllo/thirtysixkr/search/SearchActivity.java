@@ -84,7 +84,10 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
                     lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            editText.setText(contents.get(position-1).getHistoryQuery());
+                            if (position != 0) {
+                                editText.setText(contents.get(contents.size() - position).getHistoryQuery());
+                                editText.setSelection(editText.getText().length());
+                            }
                         }
                     });
 //            lv.removeHeaderView(viewMore);
@@ -157,15 +160,17 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
                                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                     @Override
                                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                        Intent intent = new Intent(SearchActivity.this, WebDetailActivity.class);
-                                        intent.putExtra("web", response.getD().getData().get(position - 1).getFeedId());
-                                        intent.putExtra("title", response.getD().getData().get(position - 1).getTitle());
-                                        intent.putExtra("time", response.getD().getData().get(position - 1).getPublishTime());
-                                        startActivity(intent);
-                                        HistoryBean bean = new HistoryBean();
-                                        bean.setHistoryQuery(editText.getText() + "");
-                                        tools.insertDB(bean);
-                                        SearchActivity.this.overridePendingTransition(R.anim.activity_in, 0);
+                                        if (position != 0) {
+                                            Intent intent = new Intent(SearchActivity.this, WebDetailActivity.class);
+                                            intent.putExtra("web", response.getD().getData().get(position - 1).getFeedId());
+                                            intent.putExtra("title", response.getD().getData().get(position - 1).getTitle());
+                                            intent.putExtra("time", response.getD().getData().get(position - 1).getPublishTime());
+                                            startActivity(intent);
+                                            HistoryBean bean = new HistoryBean();
+                                            bean.setHistoryQuery(editText.getText() + "");
+                                            tools.insertDB(bean);
+                                            SearchActivity.this.overridePendingTransition(R.anim.activity_in, 0);
+                                        }
                                     }
                                 });
 //                                Log.d("SearchActivity", lv.getAdapter().getClass().getSimpleName());
@@ -196,7 +201,10 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
                                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                     @Override
                                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                        editText.setText(contents.get(position).getHistoryQuery());
+                                        if (position != 0) {
+                                            editText.setText(contents.get(contents.size() - position).getHistoryQuery());
+                                            editText.setSelection(editText.getText().length());
+                                        }
                                     }
                                 });
                                 Log.d("SearchActivity", lv.getAdapter().getClass().getSimpleName());

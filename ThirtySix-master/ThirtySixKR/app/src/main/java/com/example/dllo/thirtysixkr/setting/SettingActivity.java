@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr;
+package com.example.dllo.thirtysixkr.setting;
 
 import android.content.Intent;
 import android.support.v7.widget.Toolbar;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.base.BaseActivity;
 
 public class SettingActivity extends BaseActivity implements View.OnClickListener {
@@ -53,7 +54,6 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
             tvCache.setText(str);
         }
 
-        mToolbar.setOnClickListener(this);
         tvMessage.setOnClickListener(this);
         tvWiFi.setOnClickListener(this);
         tvClear.setOnClickListener(this);

@@ -5,7 +5,7 @@ import android.os.Looper;
 import android.os.Message;
 
 import com.example.dllo.thirtysixkr.main.MyApp;
-import com.example.dllo.thirtysixkr.search.HistoryBean;
+import com.example.dllo.thirtysixkr.bean.HistoryBean;
 import com.litesuits.orm.LiteOrm;
 
 import java.util.ArrayList;

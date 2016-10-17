@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.bean.HistoryBean;
 
 import java.util.ArrayList;
 

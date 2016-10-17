@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr.news;
+package com.example.dllo.thirtysixkr.bean.newsbean;
 
 import java.util.List;
 

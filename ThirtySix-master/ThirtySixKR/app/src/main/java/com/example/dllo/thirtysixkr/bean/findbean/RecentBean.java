@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr.find;
+package com.example.dllo.thirtysixkr.bean.findbean;
 
 import java.util.List;
 

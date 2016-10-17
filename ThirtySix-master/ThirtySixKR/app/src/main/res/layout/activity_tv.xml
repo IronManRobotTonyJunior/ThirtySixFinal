@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <com.universalvideoview.UniversalVideoView
-            android:id="@+id/videoView"
+            android:id="@+id/video_view"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:uvv_autoRotation="true"

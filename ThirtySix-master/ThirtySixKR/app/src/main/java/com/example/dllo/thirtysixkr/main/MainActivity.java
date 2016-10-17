@@ -1,11 +1,11 @@
 package com.example.dllo.thirtysixkr.main;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
@@ -30,8 +30,9 @@ public class MainActivity extends BaseActivity {
     private TabLayout tb;
     private long timeSeconds;
     private int lastFragment = 0;
-    private GestureDetector gestureDetector;
     private boolean isExit;
+    private SharedPreferences mSetting;
+    private SharedPreferences.Editor mEditor;
 
 
     @Override
@@ -41,6 +42,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        mSetting = getSharedPreferences("settingTimePush", MODE_PRIVATE);
+        mEditor = mSetting.edit();
+        mEditor.putBoolean("firstStart", false);
+        mEditor.commit();
         vp = bindView(R.id.main_vp);
         tb = bindView(R.id.main_tb);
         fragments.add(new NewsFragment());

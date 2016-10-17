@@ -1,8 +1,10 @@
 package com.example.dllo.thirtysixkr.setting;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -21,6 +23,8 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     private Switch switchWifi;
     private Toolbar mToolbar;
     private String str;
+    private SharedPreferences mSetting;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected int setLayout() {
@@ -29,6 +33,8 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     protected void initView() {
+        mSetting = getSharedPreferences("settingTimePush", MODE_PRIVATE);
+        editor = mSetting.edit();
         mToolbar = bindView(R.id.setting_toolbar);
         tvMessage = bindView(R.id.setting_tv_message);
         tvWiFi = bindView(R.id.setting_tv_wifi);
@@ -38,8 +44,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         tvCheck = bindView(R.id.setting_tv_check);
         tvFeedback = bindView(R.id.setting_tv_feedback);
         switchWifi = bindView(R.id.setting_switch);
-
-
+        switchWifi.setChecked(true);
     }
 
     @Override
@@ -70,6 +75,17 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        switchWifi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    editor.putBoolean("isWifi", true);
+                } else {
+                    editor.putBoolean("isWifi", false);
+                }
+                editor.commit();
             }
         });
 

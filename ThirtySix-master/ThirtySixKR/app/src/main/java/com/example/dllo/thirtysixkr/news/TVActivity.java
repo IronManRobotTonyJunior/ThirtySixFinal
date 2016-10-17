@@ -1,12 +1,17 @@
 package com.example.dllo.thirtysixkr.news;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.base.BaseActivity;
@@ -31,6 +36,10 @@ public class TVActivity extends BaseActivity {
     private boolean isFullscreen;
     private Button mStart;
 
+    private SharedPreferences mSetting;
+
+    private boolean isWifi;
+
 
     @Override
     protected int setLayout() {
@@ -40,10 +49,12 @@ public class TVActivity extends BaseActivity {
     @Override
     protected void initView() {
         mVideoLayout = findViewById(R.id.video_layout);
-        videoView = (UniversalVideoView) findViewById(R.id.videoView);
+        videoView = (UniversalVideoView) findViewById(R.id.video_view);
         mediaController = (UniversalMediaController) findViewById(R.id.media_controller);
         mBottom = findViewById(R.id.bottom_layout);
         mStart = (Button) findViewById(R.id.start);
+        mSetting = getSharedPreferences("settingTimePush", MODE_PRIVATE);
+
     }
 
     @Override
@@ -68,17 +79,17 @@ public class TVActivity extends BaseActivity {
                     mBottom.setVisibility(View.VISIBLE);
                 }
                 switchTitleBar(!isFullscreen);
-
-
             }
 
             private void switchTitleBar(boolean b) {
                 ActionBar actionBar = getSupportActionBar();
 
-                if (b) {
-                    actionBar.show();
-                } else {
-                    actionBar.hide();
+                if (actionBar != null) {
+                    if (b) {
+                        actionBar.show();
+                    } else {
+                        actionBar.hide();
+                    }
                 }
             }
 
@@ -103,15 +114,25 @@ public class TVActivity extends BaseActivity {
             }
         });
         mStart.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if (mSeekposition > 0) {
                     videoView.seekTo(mSeekposition);
-
                 }
-                videoView.start();
-                mediaController.setTitle("啦啦啦");
-
+                isWifi = mSetting.getBoolean("isWifi", true);
+                if (isWifi) {
+                    videoView.start();
+                } else {
+                    ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                    NetworkInfo.State wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
+                    if (wifi == NetworkInfo.State.CONNECTED || wifi == NetworkInfo.State.CONNECTING) {
+                        videoView.start();
+                    } else {
+                        Toast.makeText(TVActivity.this, "您的Wifi没有打开,会耗费你的大量流量,如果收看,请打开允许非Wifi下播放视频", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                mediaController.setTitle("氪TV");
             }
         });
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

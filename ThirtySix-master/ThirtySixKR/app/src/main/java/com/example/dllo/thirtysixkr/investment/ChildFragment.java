@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.bean.findbean.InvestmentBean;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;
 import com.example.dllo.thirtysixkr.tools.webrequest.SendGetRequest;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;

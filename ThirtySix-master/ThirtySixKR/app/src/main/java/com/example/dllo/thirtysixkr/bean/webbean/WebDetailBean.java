@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr.web;
+package com.example.dllo.thirtysixkr.bean.webbean;
 
 public class WebDetailBean {
 

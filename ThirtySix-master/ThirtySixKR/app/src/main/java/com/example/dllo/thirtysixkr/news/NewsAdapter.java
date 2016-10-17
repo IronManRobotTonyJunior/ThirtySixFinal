@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.bean.newsbean.NewsBean;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

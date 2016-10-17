@@ -13,6 +13,7 @@ import android.widget.RadioGroup;
 
 import com.example.dllo.thirtysixkr.base.BaseActivity;
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.bean.findbean.RecentBean;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;
 import com.example.dllo.thirtysixkr.tools.webrequest.SendGetRequest;
 

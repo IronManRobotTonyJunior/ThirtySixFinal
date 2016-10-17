@@ -18,8 +18,9 @@ import android.widget.TextView;
 
 import com.example.dllo.thirtysixkr.base.BaseActivity;
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.bean.HistoryBean;
 import com.example.dllo.thirtysixkr.news.NewsAdapter;
-import com.example.dllo.thirtysixkr.news.NewsBean;
+import com.example.dllo.thirtysixkr.bean.newsbean.NewsBean;
 import com.example.dllo.thirtysixkr.tools.db.DBTools;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;
 import com.example.dllo.thirtysixkr.tools.webrequest.SendGetRequest;

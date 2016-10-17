@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr.find;
+package com.example.dllo.thirtysixkr.bean.findbean;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -21,7 +21,7 @@ public class InvestorBean {
      * totalPages : 212
      */
 
-    @SerializedName("tada")
+    @SerializedName("data")
     private Data d;
     private String msg;
 

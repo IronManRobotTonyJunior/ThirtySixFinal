@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr.investment;
+package com.example.dllo.thirtysixkr.bean.findbean;
 
 import com.google.gson.annotations.SerializedName;
 

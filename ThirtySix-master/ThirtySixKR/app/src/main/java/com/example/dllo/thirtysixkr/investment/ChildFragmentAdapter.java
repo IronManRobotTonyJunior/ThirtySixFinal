@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.bean.findbean.InvestmentBean;
 import com.example.dllo.thirtysixkr.tools.customview.CropSquareTransformation;
 import com.example.dllo.thirtysixkr.tools.customview.MyCircleImage;
 import com.squareup.picasso.Picasso;

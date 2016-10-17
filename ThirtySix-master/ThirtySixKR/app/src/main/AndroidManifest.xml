@@ -6,9 +6,9 @@
         android:name="com.example.dllo.thirtysixkr.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature"/>
 
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
     <!-- Required  一些系统要求的权限，如访问网络等-->
     <uses-permission android:name="com.example.dllo.thirtysixkr.permission.JPUSH_MESSAGE"/>
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
@@ -46,13 +46,17 @@
         <activity
             android:name=".main.MainActivity"
             android:theme="@style/CustomTiTleLan">
+
+        </activity>
+        <activity
+            android:name=".main.LeadActivity"
+            android:theme="@style/CustomTiTleLan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings">
@@ -85,9 +89,12 @@
             android:theme="@style/CustomTiTleLan"/>
         <activity
             android:name=".news.TVActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/CustomTiTleLan"
+            />
+        <activity
+            android:name=".login.SettingPasswordActivity"
             android:theme="@style/CustomTiTleLan"/>
-
-
 
 
         <activity

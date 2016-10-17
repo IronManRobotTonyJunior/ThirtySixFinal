@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.example.dllo.thirtysixkr.base.BaseFragment;
 import com.example.dllo.thirtysixkr.R;
+import com.example.dllo.thirtysixkr.bean.newsbean.NewsBean;
+import com.example.dllo.thirtysixkr.bean.newsbean.RingBean;
 import com.example.dllo.thirtysixkr.search.SearchActivity;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;
 import com.example.dllo.thirtysixkr.tools.webrequest.SendGetRequest;
@@ -270,10 +272,8 @@ public class NewsFragment extends BaseFragment implements View.OnClickListener {
             case R.id.tv_kr_tv:
                 banner.setVisibility(View.GONE);
                 drawerLayout.closeDrawer(left);
-                pullToRefreshlv.setRefreshing();
                 Intent intentTV = new Intent(getActivity(), TVActivity.class);
                 startActivity(intentTV);
-                Log.d("NewsFragment", "跳啊");
                 break;
 
             case R.id.news_iv_search:

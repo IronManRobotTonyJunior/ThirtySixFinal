@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr.search;
+package com.example.dllo.thirtysixkr.bean;
 
 import com.litesuits.orm.db.annotation.PrimaryKey;
 import com.litesuits.orm.db.enums.AssignType;

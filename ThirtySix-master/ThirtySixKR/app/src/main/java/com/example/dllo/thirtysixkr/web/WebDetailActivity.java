@@ -35,7 +35,7 @@ import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.base.BaseActivity;
 import com.example.dllo.thirtysixkr.bean.webbean.AuthorDetailBean;
 import com.example.dllo.thirtysixkr.bean.webbean.WebDetailBean;
-import com.example.dllo.thirtysixkr.news.FormatTime;
+import com.example.dllo.thirtysixkr.tools.FormatTime;
 import com.example.dllo.thirtysixkr.tools.url.Kr36Url;
 import com.example.dllo.thirtysixkr.tools.webrequest.SendGetRequest;
 import com.example.dllo.thirtysixkr.web.richtext.HtmlTextView;

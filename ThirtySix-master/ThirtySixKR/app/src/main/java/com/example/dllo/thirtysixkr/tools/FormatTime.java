@@ -1,4 +1,4 @@
-package com.example.dllo.thirtysixkr.news;
+package com.example.dllo.thirtysixkr.tools;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,6 +17,7 @@ public class FormatTime {
         switch (Integer.parseInt(nowTimeDay) - Integer.parseInt(inTimeDay)) {
             case 0:
                 // 今天的时间判断是否大于一小时
+
                 subtractTime = (timeMillis - mTime) / 1000 / 60;
                 if (subtractTime < 60) {
                     returnTime = subtractTime + "分钟前";

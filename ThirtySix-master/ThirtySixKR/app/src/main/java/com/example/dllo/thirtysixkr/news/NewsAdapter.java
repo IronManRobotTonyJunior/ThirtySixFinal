@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.bean.newsbean.NewsBean;
+import com.example.dllo.thirtysixkr.tools.FormatTime;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -64,7 +65,7 @@ public class NewsAdapter extends BaseAdapter {
         viewHolder.tvTime.setText(FormatTime.formatTime(bean.getPublishTime()));
         return convertView;
     }
-    class ViewHolder{
+    private class ViewHolder{
 
         private final TextView tvTitle;
         private final TextView tvName;

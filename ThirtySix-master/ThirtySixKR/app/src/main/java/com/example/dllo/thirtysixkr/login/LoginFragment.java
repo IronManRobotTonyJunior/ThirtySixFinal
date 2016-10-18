@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.dllo.thirtysixkr.R;
 import com.example.dllo.thirtysixkr.base.BaseFragment;
@@ -55,7 +56,6 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
         imgDeletePassword = (ImageView) password.findViewById(R.id.login_img_delete_input);
         loginQQ = bindView(R.id.login_qq_login);
         loginWeiBo = bindView(R.id.login_weibo_login);
-
 
 
     }
@@ -156,7 +156,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.login_qq_login:
                 Platform qq = ShareSDK.getPlatform(QQ.NAME);
                 qq.SSOSetting(false);  //设置false表示使用SSO授权方式
@@ -168,6 +168,7 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener 
                 weibo.showUser(null);
                 break;
             case R.id.login_btn_login:
+                Toast.makeText(mContext, "登啥啊 emoji XXX", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
